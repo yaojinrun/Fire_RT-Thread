@@ -28,7 +28,7 @@ void fill_buffer(uint8_t *pBuffer, uint32_t BufferLength, uint32_t Offset)
 }
 
 
-void sd_block_test(void)
+void sd_test(int argc, char **argv)
 {  
 	rt_device_t sd_device = RT_NULL;
 	uint8_t size;
@@ -62,11 +62,5 @@ void sd_block_test(void)
         }
     }
 }
+MSH_CMD_EXPORT(sd_test, sd card test sample);
 
-
-void sd_test(int argc, char **argv)
-{
-
-    sd_block_test();
-}
-MSH_CMD_EXPORT(sd_test, e.g: sd_test);
